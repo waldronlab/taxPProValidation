@@ -21,6 +21,7 @@ suppressMessages({
 ## a species' or genus' key is itself.
 assignSpeciesFolds <- function(dat, tip_data, K = 10) {
     keys <- tip_data |>
+        mutate(NCBI_ID = as.character(NCBI_ID), species_taxid = as.character(species_taxid)) |>
         distinct(NCBI_ID, species_taxid) |>
         mutate(
             fold_key = ifelse(
@@ -29,19 +30,24 @@ assignSpeciesFolds <- function(dat, tip_data, K = 10) {
         ) |>
         distinct(NCBI_ID, .keep_all = TRUE) |>
         select(NCBI_ID, fold_key)
+    dat$NCBI_ID <- as.character(dat$NCBI_ID)
     dat <- left_join(dat, keys, by = 'NCBI_ID')
     dat$fold_key[is.na(dat$fold_key)] <- dat$NCBI_ID[is.na(dat$fold_key)]
-    ## one fold per key, stratified by the attribute of the key's first row
+    ## one fold per key, stratified by the key's first attribute value in
+    ## sorted order (deterministic for mixed keys)
     key_tbl <- dat |>
         group_by(fold_key) |>
-        summarise(Attribute = Attribute[1], .groups = 'drop')
+        summarise(Attribute = sort(Attribute)[1], .groups = 'drop')
     folds <- split(key_tbl, key_tbl$Attribute) |>
         map(~ {
+            stopifnot(nrow(.x) >= K)   # a stratum smaller than K would not reach every fold
             cv <- cvFolds(n = nrow(.x), K = K)
             tibble(fold_key = .x$fold_key[cv$subsets[, 1]], fold = cv$which)
         }) |>
         bind_rows()
-    left_join(dat, folds, by = 'fold_key')
+    out <- left_join(dat, folds, by = 'fold_key')
+    stopifnot(!anyNA(out$fold))
+    out
 }
 
 seed <- 42342
@@ -123,7 +129,6 @@ if (length(keep_this) < 2) {
 ## attribute of each species' first annotation.
 set.seed(seed)
 fdat <- assignSpeciesFolds(fdat, tip_data, K = 10)
-keep_this <- split(fdat, fdat$Attribute)
 
 test_folds <- vector('list', 10)
 train_folds <- vector('list', 10)

@@ -133,6 +133,7 @@ values <- allTips[!is.na(allTips)]
 set.seed(1234)
 tip_keys <- tip_data |>
     select(tip_label, NCBI_ID, species_taxid) |>
+    mutate(NCBI_ID = as.character(NCBI_ID), species_taxid = as.character(species_taxid)) |>
     mutate(
         fold_key = ifelse(
             is.na(species_taxid) | species_taxid == '', NCBI_ID, species_taxid
@@ -142,6 +143,7 @@ annotated_keys <- unique(tip_keys$fold_key[tip_keys$tip_label %in% names(values)
 foldN <- cvFolds(n = length(annotated_keys), K = 10)
 key_fold <- setNames(foldN$which, annotated_keys[foldN$subsets[, 1]])
 tip_fold <- key_fold[tip_keys$fold_key[match(names(values), tip_keys$tip_label)]]
+stopifnot(!anyNA(tip_fold))
 testSets <- vector('list', 10)
 trainSets <- vector('list', 10)
 for (i in 1:10) {
