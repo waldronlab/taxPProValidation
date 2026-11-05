@@ -9,6 +9,7 @@ physiologies=(
     'mutation_rate_per_site_per_year'
     'optimal_ph'
     'width'
+    'gc_content'
 )
 
 myVar=$(which R)

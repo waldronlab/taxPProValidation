@@ -44,13 +44,21 @@ Rscript --vanilla create_summary_table.R # R in PATH
 
 The version should be updated when generating a new `validation_summary.tsv` file.
 
-Latest Version: v1.0.4
+Latest Version: v1.0.5 (in progress; see issue #2)
 
 ### Version log
 
 Use these logs in addition to the commits. The version is important here because it is referenced in `waldonlab/bugphyzz/inst/scripts/README.md`.
 
 ### Logs
+
+#### v1.0.5
+Folds are assigned per species (strains and subspecies take their species'
+fold) and, in the numeric scripts, per NCBI id rather than per tree tip, so
+no taxon is predicted from its own strains or from a duplicate tip of itself
+(issue #1). Re-run on the 2026-11 sources (Bergey's 2026 extraction, Madin
+2020 in full, BacDive from the API) with `gc_content` added to the numeric
+list (issue #2).
 
 #### v1.0.4
 Update the code based on the waldronlab/bugphyzzExports script.

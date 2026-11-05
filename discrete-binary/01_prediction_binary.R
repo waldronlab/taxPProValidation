@@ -15,6 +15,35 @@ suppressMessages({
     library(logr)
 })
 
+
+## Fold assignment by species (shared by the three prediction scripts).
+## tip_data has species_taxid for every tip; a strain's key is its species,
+## a species' or genus' key is itself.
+assignSpeciesFolds <- function(dat, tip_data, K = 10) {
+    keys <- tip_data |>
+        distinct(NCBI_ID, species_taxid) |>
+        mutate(
+            fold_key = ifelse(
+                is.na(species_taxid) | species_taxid == '', NCBI_ID, species_taxid
+            )
+        ) |>
+        distinct(NCBI_ID, .keep_all = TRUE) |>
+        select(NCBI_ID, fold_key)
+    dat <- left_join(dat, keys, by = 'NCBI_ID')
+    dat$fold_key[is.na(dat$fold_key)] <- dat$NCBI_ID[is.na(dat$fold_key)]
+    ## one fold per key, stratified by the attribute of the key's first row
+    key_tbl <- dat |>
+        group_by(fold_key) |>
+        summarise(Attribute = Attribute[1], .groups = 'drop')
+    folds <- split(key_tbl, key_tbl$Attribute) |>
+        map(~ {
+            cv <- cvFolds(n = nrow(.x), K = K)
+            tibble(fold_key = .x$fold_key[cv$subsets[, 1]], fold = cv$which)
+        }) |>
+        bind_rows()
+    left_join(dat, folds, by = 'fold_key')
+}
+
 seed <- 42342
 phys_name <- args[[1]]
 rank_arg <- args[[2]]
@@ -97,34 +126,27 @@ if (length(keep_this) < 2) {
     quit(save = 'no')
 }
 
+## Folds are assigned per species, not per taxon: strains and subspecies get
+## the fold of their species so a taxon is never predicted from its own
+## strains (taxPProValidation#1). Stratified by attribute value through the
+## attribute of each species' first annotation.
 set.seed(seed)
-cv_folds <- map(keep_this, ~ cvFolds(n = nrow(.x), K = 10))
+fdat <- assignSpeciesFolds(fdat, tip_data, K = 10)
+keep_this <- split(fdat, fdat$Attribute)
 
 test_folds <- vector('list', 10)
 train_folds <- vector('list', 10)
 for (i in 1:10) {
     fold_name <- paste0('Fold', i)
-    
-    ## Code for creating test folds
-    test_dfs <- vector('list', length(cv_folds))
-    for (j in seq_along(cv_folds)) {
-        test_dfs[[j]] <- keep_this[[j]][cv_folds[[j]]$which == i,]
-    }
-    test_folds[[i]] <- bind_rows(test_dfs)
+    test_folds[[i]] <- fdat[fdat$fold == i, ]
     names(test_folds)[i] <- fold_name
-    
-    ## Code fro creating train folds
-    train_dfs <- vector('list', length(cv_folds))
-    for (j in seq_along(cv_folds)) {
-        train_dfs[[j]] <- keep_this[[j]][cv_folds[[j]]$which != i,]
-    }
-    train_folds[[i]] <- bind_rows(train_dfs)
+    train_folds[[i]] <- fdat[fdat$fold != i, ]
     names(train_folds)[i] <- fold_name
 }
 
-## Check that none of the ids in the test sets are in the train sets
-## Value here must be TRUE
-all(map2_lgl(test_folds, train_folds, ~ !any(.x$NCBI_ID %in% .y$NCBI_ID)))
+## No taxon, and no species of a tested strain, may be in both sets
+stopifnot(all(map2_lgl(test_folds, train_folds, ~ !any(.x$NCBI_ID %in% .y$NCBI_ID))))
+stopifnot(all(map2_lgl(test_folds, train_folds, ~ !any(.x$fold_key %in% .y$fold_key))))
 
 ## Create input matrix for tree ####
 known_priors <- vector('list', length(train_folds))

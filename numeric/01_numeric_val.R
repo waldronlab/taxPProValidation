@@ -127,17 +127,34 @@ names(allTips) <- tip_data_annotated$tip_label
 values <- allTips[!is.na(allTips)]
 
 ## Create train and test sets ####
+## Folds are assigned per species (strains and subspecies take their
+## species' fold) and per NCBI id, not per tip: several tips can share an id
+## and would otherwise put the same value in both sets (taxPProValidation#1).
 set.seed(1234)
-foldN <- cvFolds(n = length(values), K = 10)
+tip_keys <- tip_data |>
+    select(tip_label, NCBI_ID, species_taxid) |>
+    mutate(
+        fold_key = ifelse(
+            is.na(species_taxid) | species_taxid == '', NCBI_ID, species_taxid
+        )
+    )
+annotated_keys <- unique(tip_keys$fold_key[tip_keys$tip_label %in% names(values)])
+foldN <- cvFolds(n = length(annotated_keys), K = 10)
+key_fold <- setNames(foldN$which, annotated_keys[foldN$subsets[, 1]])
+tip_fold <- key_fold[tip_keys$fold_key[match(names(values), tip_keys$tip_label)]]
 testSets <- vector('list', 10)
 trainSets <- vector('list', 10)
 for (i in 1:10) {
     foldName <- paste0('Fold', i)
-    testSets[[i]] <- values[foldN$subsets[foldN$which == i]]
+    testSets[[i]] <- values[tip_fold == i]
     names(testSets)[i] <- foldName
-    trainSets[[i]] <- values[foldN$subsets[foldN$which != i]]
+    trainSets[[i]] <- values[tip_fold != i]
     names(trainSets)[i] <- foldName
 }
+stopifnot(all(map2_lgl(testSets, trainSets, ~ !any(
+    tip_keys$fold_key[match(names(.x), tip_keys$tip_label)] %in%
+        tip_keys$fold_key[match(names(.y), tip_keys$tip_label)]
+))))
 
 ## hidden-state-prediction ####
 hsp <- vector('list', 10)
