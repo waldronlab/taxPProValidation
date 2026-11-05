@@ -37,10 +37,27 @@ assignSpeciesFolds <- function(dat, tip_data, K = 10) {
     ## sorted order (deterministic for mixed keys)
     key_tbl <- dat |>
         group_by(fold_key) |>
-        summarise(Attribute = sort(Attribute)[1], .groups = 'drop')
+        summarise(
+            Attribute = sort(Attribute)[1], n_values = n_distinct(Attribute),
+            .groups = 'drop'
+        )
+    if (any(key_tbl$n_values > 1)) {
+        message(sum(key_tbl$n_values > 1), ' species carry more than one value ',
+                'across their strains; stratified by the first in sorted order')
+    }
+    ## A class with fewer than K species cannot reach every fold: drop it, as
+    ## remove_ids does for classes with fewer than 10 taxa. Returns NULL when
+    ## fewer than two classes remain, so the caller can quit cleanly.
+    small <- key_tbl |> count(Attribute) |> filter(n < K) |> pull(Attribute)
+    if (length(small)) {
+        message('Dropping classes with fewer than ', K, ' species: ',
+                paste(small, collapse = ', '))
+        key_tbl <- filter(key_tbl, !Attribute %in% small)
+        dat <- filter(dat, fold_key %in% key_tbl$fold_key)
+    }
+    if (n_distinct(key_tbl$Attribute) < 2) return(NULL)
     folds <- split(key_tbl, key_tbl$Attribute) |>
         map(~ {
-            stopifnot(nrow(.x) >= K)   # a stratum smaller than K would not reach every fold
             cv <- cvFolds(n = nrow(.x), K = K)
             tibble(fold_key = .x$fold_key[cv$subsets[, 1]], fold = cv$which)
         }) |>
@@ -129,6 +146,15 @@ if (length(keep_this) < 2) {
 ## attribute of each species' first annotation.
 set.seed(seed)
 fdat <- assignSpeciesFolds(fdat, tip_data, K = 10)
+if (is.null(fdat)) {
+    msg <- paste0(
+        'Not enough data for propagation of: ', phys_name, '; rank: ', rank_arg,
+        '. Fewer than two classes with 10 or more species. Quitting.'
+    )
+    log_print(msg)
+    log_close()
+    quit(save = 'no')
+}
 
 test_folds <- vector('list', 10)
 train_folds <- vector('list', 10)
