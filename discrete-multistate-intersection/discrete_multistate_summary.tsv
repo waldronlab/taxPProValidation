@@ -1,80 +1,86 @@
 physiology	rank	method	attribute	mean_mcc	sd_mcc	ltp_bp	bp	ltp_bp_phys	bp_phys	ltp	nsti_mean	nsti_sd
-aerophilicity	all	phytools-ltp	aerobic	0.71	0.02	8530	10771	11728	15872	23501	0.039	0.045
-aerophilicity	all	phytools-ltp	anaerobic	0.84	0.02	2399	3766	11728	15872	23501	0.039	0.045
-aerophilicity	all	phytools-ltp	facultatively anaerobic	0.23	0.06	970	1575	11728	15872	23501	0.039	0.045
-aerophilicity	genus	phytools-ltp	aerobic	0.71	0.05	631	639	1169	1184	23501	0.085	0.062
-aerophilicity	genus	phytools-ltp	anaerobic	0.71	0.04	392	398	1169	1184	23501	0.085	0.062
-aerophilicity	genus	phytools-ltp	facultatively anaerobic	0.5	0.1	173	174	1169	1184	23501	0.085	0.062
-aerophilicity	species	phytools-ltp	aerobic	0.69	0.03	7152	8418	9078	11268	23501	0.053	0.059
-aerophilicity	species	phytools-ltp	anaerobic	0.84	0.03	1387	2162	9078	11268	23501	0.053	0.059
-aerophilicity	species	phytools-ltp	facultatively anaerobic	0.21	0.07	683	901	9078	11268	23501	0.053	0.059
-aerophilicity	strain	phytools-ltp	aerobic	0.74	0.07	747	1714	1481	3420	23501	0.099	0.066
-aerophilicity	strain	phytools-ltp	anaerobic	0.83	0.05	620	1206	1481	3420	23501	0.099	0.066
-aerophilicity	strain	phytools-ltp	facultatively anaerobic	0.35	0.07	114	500	1481	3420	23501	0.099	0.066
-arrangement	all	phytools-ltp	branched	0.1	0.16	97	109	741	1568	23501	0.116	0.079
-arrangement	all	phytools-ltp	cell chain	0.37	0.17	219	448	741	1568	23501	0.116	0.079
-arrangement	all	phytools-ltp	cell cluster	0.28	0.23	97	130	741	1568	23501	0.116	0.079
-arrangement	all	phytools-ltp	filamentous	0.33	0.36	24	68	741	1568	23501	0.116	0.079
-arrangement	all	phytools-ltp	paired cells	0.38	0.17	376	775	741	1568	23501	0.116	0.079
-arrangement	all	phytools-ltp	single	0.23	0.17	368	771	741	1568	23501	0.116	0.079
-arrangement	all	phytools-ltp	tetrads	0	0	28	44	741	1568	23501	0.116	0.079
-arrangement	genus	phytools-ltp	branched	0.13	0.19	87	90	376	390	23501	0.133	0.086
-arrangement	genus	phytools-ltp	cell chain	-0.01	0.01	108	109	376	390	23501	0.133	0.086
-arrangement	genus	phytools-ltp	cell cluster	0.06	0.22	70	73	376	390	23501	0.133	0.086
-arrangement	genus	phytools-ltp	paired cells	0.09	0.23	193	194	376	390	23501	0.133	0.086
-arrangement	genus	phytools-ltp	single	-0.01	0.02	221	228	376	390	23501	0.133	0.086
-biosafety level	all	phytools-ltp	biosafety level 1	0.58	0.04	9076	11160	9928	12477	23501	0.049	0.05
-biosafety level	all	phytools-ltp	biosafety level 2	0.51	0.05	851	1320	9928	12477	23501	0.049	0.05
-biosafety level	all	phytools-ltp	biosafety level 3	0.24	0.4	12	15	9928	12477	23501	0.049	0.05
-biosafety level	species	phytools-ltp	biosafety level 1	0.54	0.04	7623	8195	8208	8907	23501	0.058	0.059
-biosafety level	species	phytools-ltp	biosafety level 2	0.5	0.05	586	717	8208	8907	23501	0.058	0.059
-biosafety level	strain	phytools-ltp	biosafety level 1	0.52	0.08	1453	2965	1720	3570	23501	0.093	0.062
-biosafety level	strain	phytools-ltp	biosafety level 2	0.5	0.1	265	603	1720	3570	23501	0.093	0.062
-COGEM pathogenicity rating	all	phytools-ltp	COGEM pathogenicity rating 1	0.74	0.1	164	489	450	1036	23501	0.184	0.129
-COGEM pathogenicity rating	all	phytools-ltp	COGEM pathogenicity rating 2	0.71	0.1	267	514	450	1036	23501	0.184	0.129
-COGEM pathogenicity rating	all	phytools-ltp	COGEM pathogenicity rating 3	0.72	0.42	19	33	450	1036	23501	0.184	0.129
-COGEM pathogenicity rating	species	phytools-ltp	COGEM pathogenicity rating 1	0.74	0.1	164	489	450	1036	23501	0.184	0.129
-COGEM pathogenicity rating	species	phytools-ltp	COGEM pathogenicity rating 2	0.71	0.1	267	514	450	1036	23501	0.184	0.129
-COGEM pathogenicity rating	species	phytools-ltp	COGEM pathogenicity rating 3	0.72	0.42	19	33	450	1036	23501	0.184	0.129
-gram stain	all	phytools-ltp	gram stain negative	0.93	0.01	5515	7508	8856	12116	23501	0.041	0.042
-gram stain	all	phytools-ltp	gram stain positive	0.91	0.01	3223	4466	8856	12116	23501	0.041	0.042
-gram stain	all	phytools-ltp	gram stain variable	0.1	0.08	130	155	8856	12116	23501	0.041	0.042
-gram stain	genus	phytools-ltp	gram stain negative	0.85	0.05	786	816	1243	1278	23501	0.08	0.06
-gram stain	genus	phytools-ltp	gram stain positive	0.83	0.05	423	427	1243	1278	23501	0.08	0.06
-gram stain	genus	phytools-ltp	gram stain variable	0.12	0.22	44	45	1243	1278	23501	0.08	0.06
-gram stain	species	phytools-ltp	gram stain negative	0.95	0.01	4034	5179	6609	8498	23501	0.062	0.067
-gram stain	species	phytools-ltp	gram stain positive	0.93	0.02	2502	3237	6609	8498	23501	0.062	0.067
-gram stain	species	phytools-ltp	gram stain variable	0.1	0.17	75	85	6609	8498	23501	0.062	0.067
-gram stain	strain	phytools-ltp	gram stain negative	0.87	0.04	695	1513	1004	2340	23501	0.109	0.07
-gram stain	strain	phytools-ltp	gram stain positive	0.88	0.03	298	802	1004	2340	23501	0.109	0.07
-gram stain	strain	phytools-ltp	gram stain variable	0.2	0.42	11	25	1004	2340	23501	0.109	0.07
-hemolysis	all	phytools-ltp	alpha	0.27	0.16	94	112	433	585	23501	0.273	0.19
-hemolysis	all	phytools-ltp	beta	0.37	0.18	131	195	433	585	23501	0.273	0.19
-hemolysis	all	phytools-ltp	gamma	0.33	0.13	266	345	433	585	23501	0.273	0.19
-hemolysis	species	phytools-ltp	alpha	0.15	0.2	74	77	339	409	23501	0.283	0.19
-hemolysis	species	phytools-ltp	beta	0.3	0.16	115	159	339	409	23501	0.283	0.19
-hemolysis	species	phytools-ltp	gamma	0.36	0.11	201	228	339	409	23501	0.283	0.19
-shape	all	phytools-ltp	bacillus	0.46	0.07	1511	2960	2045	3969	23501	0.069	0.052
-shape	all	phytools-ltp	coccobacillus	0	0	35	37	2045	3969	23501	0.069	0.052
-shape	all	phytools-ltp	coccus	0.63	0.09	441	781	2045	3969	23501	0.069	0.052
-shape	all	phytools-ltp	elliptic	0.18	0.3	109	122	2045	3969	23501	0.069	0.052
-shape	all	phytools-ltp	filamentous	0.17	0.23	45	60	2045	3969	23501	0.069	0.052
-shape	all	phytools-ltp	spirillum	0.7	0.16	96	202	2045	3969	23501	0.069	0.052
-shape	all	phytools-ltp	tail	1	0	15	34	2045	3969	23501	0.069	0.052
-shape	genus	phytools-ltp	bacillus	0.18	0.08	806	840	1113	1177	23501	0.085	0.059
-shape	genus	phytools-ltp	coccobacillus	0	0	35	37	1113	1177	23501	0.085	0.059
-shape	genus	phytools-ltp	coccus	0.37	0.11	292	319	1113	1177	23501	0.085	0.059
-shape	genus	phytools-ltp	elliptic	0.12	0.27	109	122	1113	1177	23501	0.085	0.059
-shape	genus	phytools-ltp	filamentous	0.06	0.18	33	36	1113	1177	23501	0.085	0.059
-shape	genus	phytools-ltp	spirillum	0.23	0.32	53	59	1113	1177	23501	0.085	0.059
-shape	species	phytools-ltp	bacillus	0.96	0.06	409	1299	527	1629	23501	0.182	0.131
-shape	species	phytools-ltp	coccus	0.79	0.15	67	203	527	1629	23501	0.182	0.131
-shape	species	phytools-ltp	spirillum	1	0	26	78	527	1629	23501	0.182	0.131
-shape	species	phytools-ltp	tail	1	0	15	34	527	1629	23501	0.182	0.131
-shape	strain	phytools-ltp	bacillus	0.68	0.1	296	821	405	1163	23501	0.161	0.081
-shape	strain	phytools-ltp	coccus	0.62	0.2	82	259	405	1163	23501	0.161	0.081
-shape	strain	phytools-ltp	filamentous	0.27	0.44	10	18	405	1163	23501	0.161	0.081
-shape	strain	phytools-ltp	spirillum	0.42	0.45	17	65	405	1163	23501	0.161	0.081
-spore shape	all	phytools-ltp	coccus	0	0	26	26	300	708	23501	0.364	0.204
-spore shape	all	phytools-ltp	elliptic	0.19	0.43	34	34	300	708	23501	0.364	0.204
-spore shape	all	phytools-ltp	endospore	0.15	0.23	281	689	300	708	23501	0.364	0.204
+aerophilicity	all	phytools-ltp	aerobic	0.66	0.02	9592	13066	13283	19327	23501	0.034	0.041
+aerophilicity	all	phytools-ltp	anaerobic	0.85	0.01	2966	4863	13283	19327	23501	0.034	0.041
+aerophilicity	all	phytools-ltp	facultatively anaerobic	0.27	0.03	1840	3231	13283	19327	23501	0.034	0.041
+aerophilicity	genus	phytools-ltp	aerobic	0.67	0.06	886	916	1565	1622	23501	0.075	0.056
+aerophilicity	genus	phytools-ltp	anaerobic	0.78	0.05	571	593	1565	1622	23501	0.075	0.056
+aerophilicity	genus	phytools-ltp	facultatively anaerobic	0.55	0.17	288	297	1565	1622	23501	0.075	0.056
+aerophilicity	species	phytools-ltp	aerobic	0.63	0.02	7785	9900	10064	13639	23501	0.048	0.056
+aerophilicity	species	phytools-ltp	anaerobic	0.83	0.02	1727	2909	10064	13639	23501	0.048	0.056
+aerophilicity	species	phytools-ltp	facultatively anaerobic	0.24	0.05	1255	1896	10064	13639	23501	0.048	0.056
+aerophilicity	strain	phytools-ltp	aerobic	0.62	0.04	921	2250	1654	4066	23501	0.096	0.065
+aerophilicity	strain	phytools-ltp	anaerobic	0.86	0.03	668	1361	1654	4066	23501	0.096	0.065
+aerophilicity	strain	phytools-ltp	facultatively anaerobic	0.33	0.15	297	1038	1654	4066	23501	0.096	0.065
+arrangement	all	phytools-ltp	branched	0.13	0.15	97	109	736	1558	23501	0.116	0.079
+arrangement	all	phytools-ltp	cell chain	0.34	0.19	217	446	736	1558	23501	0.116	0.079
+arrangement	all	phytools-ltp	cell cluster	0.32	0.3	97	130	736	1558	23501	0.116	0.079
+arrangement	all	phytools-ltp	filamentous	0.36	0.4	24	68	736	1558	23501	0.116	0.079
+arrangement	all	phytools-ltp	paired cells	0.37	0.17	371	765	736	1558	23501	0.116	0.079
+arrangement	all	phytools-ltp	single	0.14	0.19	367	771	736	1558	23501	0.116	0.079
+arrangement	all	phytools-ltp	tetrads	0	0	28	44	736	1558	23501	0.116	0.079
+arrangement	genus	phytools-ltp	branched	0.14	0.23	87	90	373	387	23501	0.133	0.086
+arrangement	genus	phytools-ltp	cell chain	-0.02	0.02	106	107	373	387	23501	0.133	0.086
+arrangement	genus	phytools-ltp	cell cluster	0.06	0.23	70	73	373	387	23501	0.133	0.086
+arrangement	genus	phytools-ltp	paired cells	0.13	0.34	190	191	373	387	23501	0.133	0.086
+arrangement	genus	phytools-ltp	single	-0.01	0.02	220	227	373	387	23501	0.133	0.086
+biosafety level	all	phytools-ltp	biosafety level 1	0.56	0.04	9700	12273	10589	13786	23501	0.048	0.048
+biosafety level	all	phytools-ltp	biosafety level 2	0.5	0.06	1028	1687	10589	13786	23501	0.048	0.048
+biosafety level	all	phytools-ltp	biosafety level 3	0.3	0.48	12	24	10589	13786	23501	0.048	0.048
+biosafety level	species	phytools-ltp	biosafety level 1	0.54	0.05	8110	8906	8701	9677	23501	0.057	0.058
+biosafety level	species	phytools-ltp	biosafety level 2	0.47	0.06	733	958	8701	9677	23501	0.057	0.058
+biosafety level	strain	phytools-ltp	biosafety level 1	0.5	0.09	1590	3367	1888	4109	23501	0.09	0.061
+biosafety level	strain	phytools-ltp	biosafety level 2	0.47	0.11	295	729	1888	4109	23501	0.09	0.061
+COGEM pathogenicity rating	all	phytools-ltp	COGEM pathogenicity rating 1	0.74	0.08	161	480	446	1025	23501	0.184	0.129
+COGEM pathogenicity rating	all	phytools-ltp	COGEM pathogenicity rating 2	0.73	0.08	266	512	446	1025	23501	0.184	0.129
+COGEM pathogenicity rating	all	phytools-ltp	COGEM pathogenicity rating 3	0.69	0.39	19	33	446	1025	23501	0.184	0.129
+COGEM pathogenicity rating	species	phytools-ltp	COGEM pathogenicity rating 1	0.74	0.08	161	480	446	1025	23501	0.184	0.129
+COGEM pathogenicity rating	species	phytools-ltp	COGEM pathogenicity rating 2	0.73	0.08	266	512	446	1025	23501	0.184	0.129
+COGEM pathogenicity rating	species	phytools-ltp	COGEM pathogenicity rating 3	0.69	0.39	19	33	446	1025	23501	0.184	0.129
+gram stain	all	phytools-ltp	gram stain negative	0.94	0.01	8500	12780	14018	20731	23501	0.034	0.039
+gram stain	all	phytools-ltp	gram stain positive	0.93	0.01	5593	8090	14018	20731	23501	0.034	0.039
+gram stain	all	phytools-ltp	gram stain variable	0.14	0.2	118	139	14018	20731	23501	0.034	0.039
+gram stain	genus	phytools-ltp	gram stain negative	0.85	0.04	1033	1077	1541	1592	23501	0.073	0.056
+gram stain	genus	phytools-ltp	gram stain positive	0.79	0.05	527	536	1541	1592	23501	0.073	0.056
+gram stain	genus	phytools-ltp	gram stain variable	0	0	69	70	1541	1592	23501	0.073	0.056
+gram stain	species	phytools-ltp	gram stain negative	0.96	0.01	6551	9505	11073	15564	23501	0.048	0.053
+gram stain	species	phytools-ltp	gram stain positive	0.95	0.01	4583	6180	11073	15564	23501	0.048	0.053
+gram stain	species	phytools-ltp	gram stain variable	0	0	33	35	11073	15564	23501	0.048	0.053
+gram stain	strain	phytools-ltp	gram stain negative	0.91	0.04	916	2198	1404	3575	23501	0.1	0.067
+gram stain	strain	phytools-ltp	gram stain positive	0.9	0.02	483	1374	1404	3575	23501	0.1	0.067
+gram stain	strain	phytools-ltp	gram stain variable	0.37	0.49	16	34	1404	3575	23501	0.1	0.067
+hemolysis	all	phytools-ltp	alpha	0.22	0.16	89	113	413	562	23501	0.278	0.188
+hemolysis	all	phytools-ltp	beta	0.29	0.27	94	142	413	562	23501	0.278	0.188
+hemolysis	all	phytools-ltp	gamma	0.26	0.13	270	356	413	562	23501	0.278	0.188
+hemolysis	species	phytools-ltp	alpha	0.15	0.28	71	77	316	371	23501	0.287	0.188
+hemolysis	species	phytools-ltp	beta	0.3	0.17	80	106	316	371	23501	0.287	0.188
+hemolysis	species	phytools-ltp	gamma	0.3	0.19	200	226	316	371	23501	0.287	0.188
+shape	all	phytools-ltp	bacillus	0.48	0.04	5155	7774	6647	10235	23501	0.045	0.04
+shape	all	phytools-ltp	coccobacillus	0.11	0.09	286	345	6647	10235	23501	0.045	0.04
+shape	all	phytools-ltp	coccus	0.64	0.05	1029	1688	6647	10235	23501	0.045	0.04
+shape	all	phytools-ltp	elliptic	0.07	0.22	171	190	6647	10235	23501	0.045	0.04
+shape	all	phytools-ltp	filamentous	0.44	0.11	326	491	6647	10235	23501	0.045	0.04
+shape	all	phytools-ltp	pleiomorphic cell	0.18	0.23	200	232	6647	10235	23501	0.045	0.04
+shape	all	phytools-ltp	spirillum	0.47	0.13	205	379	6647	10235	23501	0.045	0.04
+shape	all	phytools-ltp	vibrio	0.14	0.15	304	360	6647	10235	23501	0.045	0.04
+shape	genus	phytools-ltp	bacillus	0.21	0.07	1219	1283	1702	1834	23501	0.071	0.053
+shape	genus	phytools-ltp	coccobacillus	0	0	60	62	1702	1834	23501	0.071	0.053
+shape	genus	phytools-ltp	coccus	0.38	0.21	401	451	1702	1834	23501	0.071	0.053
+shape	genus	phytools-ltp	elliptic	0	0	171	190	1702	1834	23501	0.071	0.053
+shape	genus	phytools-ltp	filamentous	0.59	0.18	261	300	1702	1834	23501	0.071	0.053
+shape	genus	phytools-ltp	pleiomorphic cell	0	0	177	188	1702	1834	23501	0.071	0.053
+shape	genus	phytools-ltp	spirillum	0.18	0.3	93	103	1702	1834	23501	0.071	0.053
+shape	genus	phytools-ltp	vibrio	0	0.01	225	230	1702	1834	23501	0.071	0.053
+shape	species	phytools-ltp	bacillus	0.56	0.05	3640	5671	4540	7239	23501	0.069	0.063
+shape	species	phytools-ltp	coccobacillus	0.12	0.14	226	283	4540	7239	23501	0.069	0.063
+shape	species	phytools-ltp	coccus	0.64	0.04	546	979	4540	7239	23501	0.069	0.063
+shape	species	phytools-ltp	filamentous	0.48	0.18	55	173	4540	7239	23501	0.069	0.063
+shape	species	phytools-ltp	pleiomorphic cell	0.17	0.37	23	44	4540	7239	23501	0.069	0.063
+shape	species	phytools-ltp	spirillum	0.56	0.15	95	210	4540	7239	23501	0.069	0.063
+shape	species	phytools-ltp	vibrio	0	0	79	130	4540	7239	23501	0.069	0.063
+shape	strain	phytools-ltp	bacillus	0.67	0.09	296	820	405	1162	23501	0.161	0.081
+shape	strain	phytools-ltp	coccus	0.64	0.12	82	258	405	1162	23501	0.161	0.081
+shape	strain	phytools-ltp	filamentous	0.3	0.48	10	18	405	1162	23501	0.161	0.081
+shape	strain	phytools-ltp	spirillum	0.45	0.4	17	66	405	1162	23501	0.161	0.081
+spore shape	all	phytools-ltp	coccus	0	0	26	26	298	705	23501	0.364	0.204
+spore shape	all	phytools-ltp	elliptic	0.13	0.3	34	34	298	705	23501	0.364	0.204
+spore shape	all	phytools-ltp	endospore	0.16	0.29	279	686	298	705	23501	0.364	0.204

@@ -1,13 +1,13 @@
 physiology	rank	method	attribute	mean	sd
-gram stain	all	phytools-ltp	gram stain negative	0.931429436772212	0.00835197203341445
-gram stain	all	phytools-ltp	gram stain positive	0.909368113915559	0.0128165007452645
-gram stain	all	phytools-ltp	gram stain variable	0.103988799285905	0.078708394905253
-gram stain	genus	phytools-ltp	gram stain negative	0.85479680964015	0.0469090117092684
-gram stain	genus	phytools-ltp	gram stain positive	0.832239672290133	0.0494158666203078
-gram stain	genus	phytools-ltp	gram stain variable	0.118271447853623	0.216224352472547
-gram stain	species	phytools-ltp	gram stain negative	0.953214937151532	0.0112435185558503
-gram stain	species	phytools-ltp	gram stain positive	0.92971752097486	0.0177725395913709
-gram stain	species	phytools-ltp	gram stain variable	0.099258855450034	0.165007829553064
-gram stain	strain	phytools-ltp	gram stain negative	0.874933764848297	0.035887523844285
-gram stain	strain	phytools-ltp	gram stain positive	0.877569736706367	0.0319804246230125
-gram stain	strain	phytools-ltp	gram stain variable	0.2	0.421637021355784
+gram stain	all	phytools-ltp	gram stain negative	0.944471155526065	0.0104703031090606
+gram stain	all	phytools-ltp	gram stain positive	0.931482678348202	0.00936494279392112
+gram stain	all	phytools-ltp	gram stain variable	0.143859391456365	0.195669309217421
+gram stain	genus	phytools-ltp	gram stain negative	0.848035439423109	0.0377179074765402
+gram stain	genus	phytools-ltp	gram stain positive	0.788494480412225	0.0490677384275459
+gram stain	genus	phytools-ltp	gram stain variable	-0.000657894736842105	0.00208044582905814
+gram stain	species	phytools-ltp	gram stain negative	0.959748940107565	0.00876418486486692
+gram stain	species	phytools-ltp	gram stain positive	0.950710261699065	0.00992012685802819
+gram stain	species	phytools-ltp	gram stain variable	-0.00031335176309355	0.000660603604595382
+gram stain	strain	phytools-ltp	gram stain negative	0.905889264246154	0.0389505667449988
+gram stain	strain	phytools-ltp	gram stain positive	0.896255111715539	0.0241501337311988
+gram stain	strain	phytools-ltp	gram stain variable	0.370459484862524	0.485804213131078

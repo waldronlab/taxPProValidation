@@ -1,7 +1,7 @@
 physiology	rank	method	attribute	mean	sd
-COGEM pathogenicity rating	all	phytools-ltp	COGEM pathogenicity rating 1	0.736965253682077	0.100755250842158
-COGEM pathogenicity rating	all	phytools-ltp	COGEM pathogenicity rating 2	0.713313697941807	0.0973642181799921
-COGEM pathogenicity rating	all	phytools-ltp	COGEM pathogenicity rating 3	0.717647862605283	0.417198806601565
-COGEM pathogenicity rating	species	phytools-ltp	COGEM pathogenicity rating 1	0.736965253682077	0.100755250842158
-COGEM pathogenicity rating	species	phytools-ltp	COGEM pathogenicity rating 2	0.713313697941807	0.0973642181799921
-COGEM pathogenicity rating	species	phytools-ltp	COGEM pathogenicity rating 3	0.717647862605283	0.417198806601565
+COGEM pathogenicity rating	all	phytools-ltp	COGEM pathogenicity rating 1	0.735338136843612	0.0759254632263389
+COGEM pathogenicity rating	all	phytools-ltp	COGEM pathogenicity rating 2	0.727036264041408	0.0835051400386543
+COGEM pathogenicity rating	all	phytools-ltp	COGEM pathogenicity rating 3	0.69038334175467	0.387372348188579
+COGEM pathogenicity rating	species	phytools-ltp	COGEM pathogenicity rating 1	0.735338136843612	0.0759254632263389
+COGEM pathogenicity rating	species	phytools-ltp	COGEM pathogenicity rating 2	0.727036264041408	0.0835051400386543
+COGEM pathogenicity rating	species	phytools-ltp	COGEM pathogenicity rating 3	0.69038334175467	0.387372348188579

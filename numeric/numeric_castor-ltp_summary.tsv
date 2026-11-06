@@ -1,16 +1,25 @@
 physiology	rank	r2_mean	r2_sd	ltp_bp_phys	bp_phys	ltp	nsti_mean	nsti_sd	method
-coding genes	all	0.72	0.03	1410	4303	23031	0.101	0.069	castor-ltp
-coding genes	species	0.66	0.11	700	1440	23031	0.135	0.096	castor-ltp
-coding genes	strain	0.62	0.11	710	2863	23031	0.131	0.077	castor-ltp
-genome size	all	0.72	0.07	1409	4298	23031	0.101	0.069	castor-ltp
-genome size	species	0.67	0.12	700	1437	23031	0.135	0.096	castor-ltp
-genome size	strain	0.62	0.11	709	2861	23031	0.131	0.077	castor-ltp
-growth temperature	all	0.55	0.04	14251	21033	23031	0.035	0.04	castor-ltp
-growth temperature	species	0.47	0.04	12433	16916	23031	0.043	0.051	castor-ltp
-growth temperature	strain	0.71	0.09	1818	4117	23031	0.092	0.062	castor-ltp
-length	all	0.15	0.24	605	636	23031	0.114	0.078	castor-ltp
-length	genus	0.15	0.24	605	636	23031	0.114	0.078	castor-ltp
-optimal ph	all	0.14	0.16	290	878	23031	0.179	0.11	castor-ltp
-optimal ph	species	0.14	0.16	290	878	23031	0.179	0.11	castor-ltp
-width	all	0.04	0.04	756	812	23031	0.102	0.076	castor-ltp
-width	genus	0.04	0.04	756	812	23031	0.102	0.076	castor-ltp
+coding genes	all	0.78	0.03	2163	6324	23031	0.09	0.065	castor-ltp
+coding genes	species	0.77	0.05	1453	3466	23031	0.111	0.084	castor-ltp
+coding genes	strain	0.64	0.07	710	2858	23031	0.131	0.077	castor-ltp
+gc content	all	0.92	0.01	13575	18093	23031	0.03	0.034	castor-ltp
+gc content	genus	0.76	0.04	1678	1756	23031	0.071	0.053	castor-ltp
+gc content	species	0.92	0.01	10294	13128	23031	0.045	0.051	castor-ltp
+gc content	strain	0.78	0.04	1603	3209	23031	0.094	0.064	castor-ltp
+genome size	all	0.82	0.01	6033	16556	23031	0.059	0.052	castor-ltp
+genome size	species	0.81	0.02	5324	13691	23031	0.066	0.06	castor-ltp
+genome size	strain	0.63	0.1	709	2865	23031	0.131	0.077	castor-ltp
+growth temperature	all	0.74	0.03	15565	23024	23031	0.03	0.036	castor-ltp
+growth temperature	genus	0.63	0.09	521	538	23031	0.123	0.081	castor-ltp
+growth temperature	species	0.66	0.03	13098	17912	23031	0.04	0.05	castor-ltp
+growth temperature	strain	0.76	0.05	1946	4574	23031	0.088	0.06	castor-ltp
+length	all	0.29	0.15	5814	6519	23031	0.057	0.053	castor-ltp
+length	genus	0.11	0.12	602	632	23031	0.115	0.078	castor-ltp
+length	species	0.34	0.18	4620	4824	23031	0.076	0.072	castor-ltp
+length	strain	0.19	0.25	592	1063	23031	0.139	0.087	castor-ltp
+optimal ph	all	0.26	0.07	2866	3764	23031	0.09	0.081	castor-ltp
+optimal ph	species	0.26	0.07	2866	3764	23031	0.09	0.081	castor-ltp
+width	all	0.01	0.02	5857	6574	23031	0.055	0.052	castor-ltp
+width	genus	0.1	0.18	751	807	23031	0.102	0.076	castor-ltp
+width	species	0.18	0.03	4518	4717	23031	0.078	0.073	castor-ltp
+width	strain	0.07	0.06	588	1050	23031	0.138	0.085	castor-ltp
