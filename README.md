@@ -31,6 +31,10 @@ Go inside each of the `discrete-binary/`, `discrete-multistate-intersection/`, a
 
 Some *.csv files must have been created in each of the directories. Proceed to step 2.
 
+The per-physiology result files are tracked in git. Do not `git pull`, `checkout` or `reset` in the run directory while a run is in progress: it silently replaces fresh results with the committed ones (issue #4). Pull before launching and commit the results when the run is complete.
+
+The `02_validation_*.sh` scripts take the method as their argument, for example `bash 02_validation_binary.sh phytools-ltp`. Without it the output files are named `<physiology>__mcc.tsv`.
+
 ### 2. Generate a summary file
 
 In the main directory, run in a linux-like terminal:
@@ -44,7 +48,7 @@ Rscript --vanilla create_summary_table.R # R in PATH
 
 The version should be updated when generating a new `validation_summary.tsv` file.
 
-Latest Version: v1.0.5 (in progress; see issue #2)
+Latest Version: v1.0.5
 
 ### Version log
 
@@ -58,7 +62,11 @@ fold) and, in the numeric scripts, per NCBI id rather than per tree tip, so
 no taxon is predicted from its own strains or from a duplicate tip of itself
 (issue #1). Re-run on the 2026-11 sources (Bergey's 2026 extraction, Madin
 2020 in full, BacDive from the API) with `gc_content` added to the numeric
-list (issue #2).
+list (issue #2). Rank `all` changes against v1.0.4: G+C content R2 0.92 (new);
+genome size 0.72 to 0.82, coding genes 0.72 to 0.78, growth temperature 0.55
+to 0.74; aerobic MCC 0.71 to 0.66, spirillum 0.70 to 0.47 and COGEM 3 0.72 to
+0.69 fall below 0.7; the shape class "tail" has too few species for five folds
+and no longer has a row.
 
 #### v1.0.4
 Update the code based on the waldronlab/bugphyzzExports script.

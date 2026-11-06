@@ -1,2 +1,2 @@
 physiology	r_squared_mean	r_squared_sd	rank	ltp_bp_phys	bp_phys	ltp	nsti_mean	nsti_sd	method
-coding genes	0.65505685824555	0.112827236910749	species	700	1440	23031	0.135	0.096	castor-ltp
+coding genes	0.769531254449583	0.0501516653218391	species	1453	3466	23031	0.111	0.084	castor-ltp

@@ -1,4 +1,4 @@
 Attribute	ltp_bp	bp	ltp_bp_phys	bp_phys	ltp	nsti_mean	nsti_sd
-gram stain negative	4034	5179	6609	8498	23501	0.062	0.067
-gram stain positive	2502	3237	6609	8498	23501	0.062	0.067
-gram stain variable	75	85	6609	8498	23501	0.062	0.067
+gram stain negative	6551	9505	11073	15564	23501	0.048	0.053
+gram stain positive	4583	6180	11073	15564	23501	0.048	0.053
+gram stain variable	33	35	11073	15564	23501	0.048	0.053

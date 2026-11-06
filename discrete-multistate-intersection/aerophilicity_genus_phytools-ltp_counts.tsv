@@ -1,4 +1,4 @@
 Attribute	ltp_bp	bp	ltp_bp_phys	bp_phys	ltp	nsti_mean	nsti_sd
-aerobic	631	639	1169	1184	23501	0.085	0.062
-anaerobic	392	398	1169	1184	23501	0.085	0.062
-facultatively anaerobic	173	174	1169	1184	23501	0.085	0.062
+aerobic	886	916	1565	1622	23501	0.075	0.056
+anaerobic	571	593	1565	1622	23501	0.075	0.056
+facultatively anaerobic	288	297	1565	1622	23501	0.075	0.056
