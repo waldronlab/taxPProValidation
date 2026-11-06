@@ -67,6 +67,11 @@ genome size 0.72 to 0.82, coding genes 0.72 to 0.78, growth temperature 0.55
 to 0.74; aerobic MCC 0.71 to 0.66, spirillum 0.70 to 0.47 and COGEM 3 0.72 to
 0.69 fall below 0.7; the shape class "tail" has too few species for five folds
 and no longer has a row.
+Run on supermicro on 2026-11-05 with bugphyzz 1.7.5 and taxPPro 1.0.1;
+`physiologies()` read the Google Sheets and bugphyzzExports `sources/` (BacDive
+API table fetched 2026-11-03) that day. Seeds are fixed in the 01 scripts. The
+fold CSVs are not tracked (`.gitignore`); they stay in the run directories on
+supermicro.
 
 #### v1.0.4
 Update the code based on the waldronlab/bugphyzzExports script.
