@@ -94,6 +94,8 @@ node_data <- ltp$node_data
 
 ## bugphyzz data
 phys <- physiologies(gsub('_', ' ', phys_name))[[1]]
+source('../export_inputs.R')
+phys <- export_inputs(phys, gsub('_', ' ', phys_name), log = log_print)
 dat <- getDataReady(filterData(phys)) |> 
     filter(!is.na(Evidence)) |>
     filter(Rank %in% rank_var) 
