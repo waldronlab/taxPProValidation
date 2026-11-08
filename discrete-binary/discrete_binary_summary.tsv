@@ -1,19 +1,17 @@
 physiology	rank	method	attribute	mean_mcc	sd_mcc	ltp_bp_phys	bp_phys	ltp	nsti_mean	nsti_sd
-animal pathogen	all	phytools-ltp	animal pathogen	0.48	0.1	1044	2144	23501	0.153	0.11
-animal pathogen	species	phytools-ltp	animal pathogen	0.51	0.09	903	1803	23501	0.156	0.111
-antimicrobial sensitivity	all	phytools-ltp	antimicrobial sensitivity	0.5	0.16	297	810	23501	0.192	0.119
-antimicrobial sensitivity	species	phytools-ltp	antimicrobial sensitivity	0.5	0.16	297	810	23501	0.192	0.119
-extreme environment	all	phytools-ltp	extreme environment	0.43	0.15	699	1830	23501	0.147	0.1
-extreme environment	species	phytools-ltp	extreme environment	0.43	0.15	699	1830	23501	0.147	0.1
-host-associated	all	phytools-ltp	host-associated	0.46	0.1	890	2463	23501	0.133	0.095
-host-associated	species	phytools-ltp	host-associated	0.49	0.06	880	2453	23501	0.135	0.095
-motility	all	phytools-ltp	motility	0.52	0.03	10812	14806	23501	0.038	0.04
-motility	genus	phytools-ltp	motility	0.16	0.08	1413	1502	23501	0.077	0.055
+animal pathogen	all	phytools-ltp	animal pathogen	0.5	0.08	1106	2776	23501	0.147	0.106
+animal pathogen	species	phytools-ltp	animal pathogen	0.49	0.05	958	2413	23501	0.15	0.106
+antimicrobial sensitivity	all	phytools-ltp	antimicrobial sensitivity	0.51	0.14	353	1083	23501	0.207	0.165
+antimicrobial sensitivity	species	phytools-ltp	antimicrobial sensitivity	0.49	0.17	347	1066	23501	0.208	0.165
+extreme environment	all	phytools-ltp	extreme environment	0.45	0.09	805	2770	23501	0.137	0.095
+extreme environment	species	phytools-ltp	extreme environment	0.46	0.09	795	2753	23501	0.138	0.095
+motility	all	phytools-ltp	motility	0.52	0.02	10816	14819	23501	0.038	0.04
+motility	genus	phytools-ltp	motility	0.12	0.09	1417	1515	23501	0.077	0.056
 motility	species	phytools-ltp	motility	0.52	0.02	8231	10705	23501	0.055	0.058
 motility	strain	phytools-ltp	motility	0.49	0.07	1168	2599	23501	0.11	0.078
-plant pathogenicity	all	phytools-ltp	plant pathogenicity	0.61	0.18	565	1461	23501	0.164	0.113
-plant pathogenicity	species	phytools-ltp	plant pathogenicity	0.61	0.18	565	1461	23501	0.164	0.113
-spore formation	all	phytools-ltp	spore formation	0.89	0.01	6645	9047	23501	0.054	0.054
-spore formation	genus	phytools-ltp	spore formation	0.72	0.1	1060	1098	23501	0.094	0.07
-spore formation	species	phytools-ltp	spore formation	0.88	0.02	5029	6902	23501	0.072	0.071
-spore formation	strain	phytools-ltp	spore formation	0.74	0.08	556	1047	23501	0.142	0.092
+plant pathogenicity	all	phytools-ltp	plant pathogenicity	0.61	0.26	650	2205	23501	0.156	0.108
+plant pathogenicity	species	phytools-ltp	plant pathogenicity	0.58	0.23	642	2181	23501	0.157	0.108
+spore formation	all	phytools-ltp	spore formation	0.88	0.02	6823	9716	23501	0.054	0.054
+spore formation	genus	phytools-ltp	spore formation	0.72	0.09	1054	1093	23501	0.097	0.081
+spore formation	species	phytools-ltp	spore formation	0.88	0.02	5203	7562	23501	0.071	0.071
+spore formation	strain	phytools-ltp	spore formation	0.76	0.1	566	1061	23501	0.141	0.091

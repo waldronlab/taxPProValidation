@@ -1,13 +1,13 @@
 physiology	rank	method	attribute	mean	sd
-aerophilicity	all	phytools-ltp	aerobic	0.65663055892386	0.0169638272220757
-aerophilicity	all	phytools-ltp	anaerobic	0.850617088702734	0.0116349981957129
-aerophilicity	all	phytools-ltp	facultatively anaerobic	0.269522722139933	0.0275175901035413
-aerophilicity	genus	phytools-ltp	aerobic	0.665661010021163	0.0616466624645748
-aerophilicity	genus	phytools-ltp	anaerobic	0.784619976051828	0.0506078825679512
-aerophilicity	genus	phytools-ltp	facultatively anaerobic	0.549654764997828	0.16977681554929
-aerophilicity	species	phytools-ltp	aerobic	0.629199374388274	0.0187088407982448
-aerophilicity	species	phytools-ltp	anaerobic	0.831142383681595	0.0179293637045035
-aerophilicity	species	phytools-ltp	facultatively anaerobic	0.235875414283299	0.0506271696291358
-aerophilicity	strain	phytools-ltp	aerobic	0.61658064092631	0.0361676698244809
-aerophilicity	strain	phytools-ltp	anaerobic	0.860568609799541	0.0305027238999346
-aerophilicity	strain	phytools-ltp	facultatively anaerobic	0.331549589608112	0.154950555526602
+aerophilicity	all	phytools-ltp	aerobic	0.654797970591937	0.0243795470214487
+aerophilicity	all	phytools-ltp	anaerobic	0.852620451747613	0.0156155756898892
+aerophilicity	all	phytools-ltp	facultatively anaerobic	0.267675350586536	0.0269584748636864
+aerophilicity	genus	phytools-ltp	aerobic	0.676588336333392	0.069119383990895
+aerophilicity	genus	phytools-ltp	anaerobic	0.794615637165135	0.0555886219185299
+aerophilicity	genus	phytools-ltp	facultatively anaerobic	0.526394476782624	0.102164142685475
+aerophilicity	species	phytools-ltp	aerobic	0.623745854423075	0.0277724211505619
+aerophilicity	species	phytools-ltp	anaerobic	0.827500608064126	0.0225115239958597
+aerophilicity	species	phytools-ltp	facultatively anaerobic	0.226138322635868	0.0700979733948629
+aerophilicity	strain	phytools-ltp	aerobic	0.595123781449329	0.0669980884507111
+aerophilicity	strain	phytools-ltp	anaerobic	0.865300376914473	0.0295434458355433
+aerophilicity	strain	phytools-ltp	facultatively anaerobic	0.310398671322306	0.199230555165045

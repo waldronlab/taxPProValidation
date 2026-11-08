@@ -3,7 +3,7 @@
 physiologies=(
    "animal_pathogen"
    "antimicrobial_sensitivity"
-   "biofilm_forming"
+   "biofilm_formation"
    "extreme_environment"
    "health_associated"
    "hydrogen_gas_producing"

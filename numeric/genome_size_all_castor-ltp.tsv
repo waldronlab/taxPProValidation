@@ -1,2 +1,2 @@
 physiology	r_squared_mean	r_squared_sd	rank	ltp_bp_phys	bp_phys	ltp	nsti_mean	nsti_sd	method
-genome size	0.819846525708774	0.00917245901687942	all	6033	16556	23031	0.059	0.052	castor-ltp
+genome size	0.879568015653092	0.0081906666653663	all	15865	82102	23031	0.033	0.042	castor-ltp

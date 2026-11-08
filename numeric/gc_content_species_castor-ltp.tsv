@@ -1,2 +1,2 @@
 physiology	r_squared_mean	r_squared_sd	rank	ltp_bp_phys	bp_phys	ltp	nsti_mean	nsti_sd	method
-gc content	0.919444499637387	0.00587919526669198	species	10294	13128	23031	0.045	0.051	castor-ltp
+gc content	0.94962073630412	0.00267479164571136	species	16304	79399	23031	0.034	0.05	castor-ltp
