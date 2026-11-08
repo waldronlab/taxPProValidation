@@ -1,28 +1,30 @@
 physiology	rank	method	attribute	mean	sd
-shape	all	phytools-ltp	bacillus	0.476315371249069	0.0361595094598956
-shape	all	phytools-ltp	coccobacillus	0.114568496728988	0.0946389079494912
-shape	all	phytools-ltp	coccus	0.644312625552249	0.0528564746096845
-shape	all	phytools-ltp	elliptic	0.069286000852188	0.223925496742468
-shape	all	phytools-ltp	filamentous	0.443305474916307	0.105036415520045
-shape	all	phytools-ltp	pleiomorphic cell	0.177575458367696	0.234006157387459
-shape	all	phytools-ltp	spirillum	0.466323310321436	0.129537730901385
-shape	all	phytools-ltp	vibrio	0.139476562462137	0.151695649838444
-shape	genus	phytools-ltp	bacillus	0.208577215288736	0.0742830310201242
-shape	genus	phytools-ltp	coccobacillus	-0.00177900013925637	0.00402187578698885
-shape	genus	phytools-ltp	coccus	0.379765808716875	0.209716208634633
-shape	genus	phytools-ltp	elliptic	-0.00288116491804162	0.00466122007941602
-shape	genus	phytools-ltp	filamentous	0.59180219570295	0.180675328416555
-shape	genus	phytools-ltp	pleiomorphic cell	-0.00264360709459012	0.00451510243091674
-shape	genus	phytools-ltp	spirillum	0.175908255726899	0.295551227165886
-shape	genus	phytools-ltp	vibrio	-0.00255403147746015	0.00538877279293766
-shape	species	phytools-ltp	bacillus	0.563647304197437	0.0481723497521086
-shape	species	phytools-ltp	coccobacillus	0.123106591356489	0.138929650321724
-shape	species	phytools-ltp	coccus	0.639785453055737	0.0444432819568868
-shape	species	phytools-ltp	filamentous	0.481370779128851	0.184757159305402
-shape	species	phytools-ltp	pleiomorphic cell	0.169692209078457	0.366813798711164
-shape	species	phytools-ltp	spirillum	0.557912123551722	0.15065424547173
-shape	species	phytools-ltp	vibrio	-0.00239506589606892	0.00316649630902489
-shape	strain	phytools-ltp	bacillus	0.674115039071884	0.0895642614886252
-shape	strain	phytools-ltp	coccus	0.644254921064717	0.11583380907238
-shape	strain	phytools-ltp	filamentous	0.297368421052632	0.484929862326304
-shape	strain	phytools-ltp	spirillum	0.449012960020548	0.397222956838822
+shape	all	phytools-ltp	bacillus	0.489779292914464	0.0252870318121232
+shape	all	phytools-ltp	coccobacillus	0.0415406057863757	0.0507615703582019
+shape	all	phytools-ltp	coccus	0.666964968583396	0.0599268060341899
+shape	all	phytools-ltp	elliptic	0.10989989107291	0.094713332394788
+shape	all	phytools-ltp	filamentous	0.485125980497436	0.0870336133557958
+shape	all	phytools-ltp	pleiomorphic cell	0.16095659830763	0.181779333779541
+shape	all	phytools-ltp	spirillum	0.458790193598311	0.0849659548230859
+shape	all	phytools-ltp	vibrio	0.215038080407137	0.0916640215560349
+shape	genus	phytools-ltp	bacillus	0.226747594353681	0.073797198696809
+shape	genus	phytools-ltp	coccobacillus	-0.00225539452031543	0.00369802249917045
+shape	genus	phytools-ltp	coccus	0.390686561862638	0.123542699131749
+shape	genus	phytools-ltp	elliptic	0.126168469076319	0.272309563322447
+shape	genus	phytools-ltp	filamentous	0.690972741341189	0.122590565836413
+shape	genus	phytools-ltp	pleiomorphic cell	-0.00119047619047619	0.00376461626210521
+shape	genus	phytools-ltp	spirillum	0.1731179669489	0.297048711849336
+shape	genus	phytools-ltp	vibrio	0.0375076157080968	0.128289321335019
+shape	species	phytools-ltp	bacillus	0.513406334495995	0.0492305422919889
+shape	species	phytools-ltp	coccobacillus	0.0424977883032647	0.0648291211991947
+shape	species	phytools-ltp	coccus	0.639587091304393	0.0430227361236866
+shape	species	phytools-ltp	elliptic	0.105573805448616	0.130125011351469
+shape	species	phytools-ltp	filamentous	0.387981885907004	0.126387525835236
+shape	species	phytools-ltp	pleiomorphic cell	0.103918737471886	0.185299392064286
+shape	species	phytools-ltp	spirillum	0.52295247949874	0.185933893555025
+shape	species	phytools-ltp	vibrio	-0.00159557567623458	0.00171757915873484
+shape	strain	phytools-ltp	bacillus	0.518172823024238	0.0648614549364624
+shape	strain	phytools-ltp	coccus	0.620613954315276	0.0751067401173368
+shape	strain	phytools-ltp	elliptic	0.0383219683345309	0.108498209919958
+shape	strain	phytools-ltp	filamentous	0.190215041331341	0.311648457748872
+shape	strain	phytools-ltp	spirillum	0.318757581154632	0.437609941454502

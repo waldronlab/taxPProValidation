@@ -1,2 +1,2 @@
 physiology	r_squared_mean	r_squared_sd	rank	ltp_bp_phys	bp_phys	ltp	nsti_mean	nsti_sd	method
-optimal ph	0.259446961595833	0.0709632744820519	all	2866	3764	23031	0.09	0.081	castor-ltp
+optimal ph	0.265030138947981	0.0642372796449718	all	2899	4004	23031	0.089	0.081	castor-ltp

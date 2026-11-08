@@ -48,13 +48,33 @@ Rscript --vanilla create_summary_table.R # R in PATH
 
 The version should be updated when generating a new `validation_summary.tsv` file.
 
-Latest Version: v1.0.5
+Latest Version: v1.0.6
 
 ### Version log
 
 Use these logs in addition to the commits. The version is important here because it is referenced in `waldonlab/bugphyzz/inst/scripts/README.md`.
 
 ### Logs
+
+#### v1.0.6
+The prediction scripts drop the rows the bugphyzzExports export drops before
+validating (`export_inputs.R`): the 2020 Bergey's scrape, superseded by
+`Bergeys_2026` (bugphyzzExports ADR 0002), and the corrections in
+`sources/sheet_overrides.tsv` (ADR 0005). `02_validation_binary.sh` now looks
+for `biofilm_formation`, the name the prediction step writes. `run_all.sh`
+(the full prediction driver) is now tracked.
+Re-run for bugphyzzExports v1.1.0 on the sources of 2026-11-07 (Bergeys_2026
+with arrangement, spore shape, width and length; The Microbe Directory from its
+2018 table). Rank `all` changes against v1.0.5: COGEM 3 MCC 0.69 to 0.71 and
+passes 0.7; coding genes R2 0.78 to 0.88, genome size 0.82 to 0.88, G+C content
+0.92 to 0.95; arrangement "branched" 0.13 to 0.50. host-associated has only
+TRUE values since The Microbe Directory import and is no longer validated;
+biofilm formation covers too little of the tree; COGEM has too little data at
+strain rank.
+Run on supermicro on 2026-11-07/08 with bugphyzz 1.7.11 (devel a47be34) and
+taxPProValidation's taxPPro 1.0.1 (main 4f149c6) in a private library, after
+`physiologies("all", forceDownload = TRUE)` so the cache matched the export
+(bugphyzzExports 07a5072).
 
 #### v1.0.5
 Folds are assigned per species (strains and subspecies take their species'
