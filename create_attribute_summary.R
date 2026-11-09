@@ -222,10 +222,10 @@ numeric <- bind_rows(map(numeric_phys, function(p) {
     bind_rows(map(ranks, ~ numeric_one(p, .x)))
 }))
 
-attributes_out <- bind_rows(map(discrete, "attr"), numeric) |>
+attributes_out <- bind_rows(c(unname(map(discrete, "attr")), list(numeric))) |>
     arrange(physiology, rank) |>
     mutate(across(where(is.double), ~ round(.x, 3)))
-states_out <- bind_rows(map(discrete, "states")) |>
+states_out <- bind_rows(unname(map(discrete, "states"))) |>
     arrange(physiology, rank, state) |>
     mutate(precision = round(precision, 3))
 
