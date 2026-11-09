@@ -63,7 +63,8 @@ imputed state with a score of 0.5 or more (`taxPPro::scores2Freq()`:
 "sometimes" and up), so the MCC in `validation_summary.tsv` now describes the
 data users receive. The held-out truth is still the curated state with a
 score above 0.8. Same predictions as v1.0.6; only the 02 and 03 steps were
-re-run (`run_v110_step4.sh` without the prediction step). Rank `all`: 36 of
+re-run (`run_v110_step4.sh` without the prediction step). The two
+cut-offs live in `validation_calls.R`, tested by `test_validation_calls.R`. Rank `all`: 36 of
 41 discrete classes gain, median 0.03; anaerobic 0.85 to 0.90, aerobic 0.65 to
 0.68, motility 0.52 to 0.61, extreme environment 0.45 to 0.57; antimicrobial
 sensitivity 0.51 to 0.45. No class changes side of 0.7 at rank `all`; shape
