@@ -33,7 +33,10 @@ run_dir <- if (length(args) >= 1) args[[1]] else "."
 attrs_file <- if (length(args) >= 2) args[[2]] else
     system.file("extdata", "attributes.tsv", package = "bugphyzz")
 
-nsti_breaks <- c(-Inf, 0.02, 0.05, 0.1, 0.2, Inf)
+script_dir <- dirname(sub(
+    "^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE)
+))
+source(file.path(script_dir, "attribute_scores.R"))
 
 ltp <- ltp()
 tree <- ltp$tree
@@ -48,44 +51,14 @@ nearest <- function(tips, reference) {
     nn$nearest_distance_per_tip[match(tips, tree$tip.label)]
 }
 
-## Weights matching held-out NSTI to target NSTI, pooled over folds.
-nsti_weights <- function(heldout_nsti, target_nsti) {
-    band_h <- cut(heldout_nsti, nsti_breaks)
-    share_t <- prop.table(table(cut(target_nsti, nsti_breaks)))
-    share_h <- prop.table(table(band_h))
-    as.numeric(share_t[as.character(band_h)] / share_h[as.character(band_h)])
-}
-
-weighted_kappa <- function(pred, truth, w, states, ordinal) {
-    k <- length(states)
-    cm <- tapply(w, list(factor(pred, states), factor(truth, states)), sum)
-    cm[is.na(cm)] <- 0
-    cm <- cm / sum(cm)
-    agree <- if (ordinal) {
-        outer(seq_len(k), seq_len(k), function(i, j) 1 - abs(i - j) / (k - 1))
-    } else {
-        diag(k)
-    }
-    expected <- outer(rowSums(cm), colSums(cm))
-    (sum(agree * cm) - sum(agree * expected)) / (1 - sum(agree * expected))
-}
-
-weighted_r2 <- function(actual, predicted, w) {
-    summary(lm(actual ~ predicted, weights = w))$r.squared
-}
-
-lower_bound <- function(x) {
-    mean(x) - qt(0.975, length(x) - 1) * sd(x) / sqrt(length(x))
-}
-
 summarise_scores <- function(folds, base) {
     tibble(
         base,
-        n_folds = nrow(folds),
-        score_mean = mean(folds$score),
-        score_sd = sd(folds$score),
+        n_folds = sum(!is.na(folds$score)),
+        score_mean = mean(folds$score, na.rm = TRUE),
+        score_sd = sd(folds$score, na.rm = TRUE),
         score_lcb = lower_bound(folds$score),
-        unweighted_mean = mean(folds$unweighted)
+        unweighted_mean = mean(folds$unweighted, na.rm = TRUE)
     )
 }
 
@@ -132,18 +105,27 @@ discrete_one <- function(dir, phys, rank) {
     held$w <- nsti_weights(held$nsti, nearest(targets, unique(tips$tip_label)))
 
     group <- unique(test$Attribute_group)
-    states <- sort(unique(c(held$truth, held$pred)))
-    pos <- attrs_tsv$ordinal_position[
-        match(paste(group, states), paste(attrs_tsv$attribute_group, attrs_tsv$attribute))
-    ]
-    ordinal <- length(states) > 2 && all(!is.na(pos))
-    if (ordinal) states <- states[order(pos)]
+    observed <- sort(unique(c(held$truth, held$pred)))
+    ## An ordered attribute is scored on its full declared scale, the same at
+    ## every rank, whichever states a rank happens to contain.
+    scale <- attrs_tsv[
+        attrs_tsv$attribute_group == group & !is.na(attrs_tsv$ordinal_position), ]
+    scale <- scale[order(scale$ordinal_position), ]
+    ordinal <- nrow(scale) > 2
+    if (ordinal) {
+        stopifnot(all(observed %in% scale$attribute))
+        states <- scale$attribute
+        positions <- scale$ordinal_position
+    } else {
+        states <- observed
+        positions <- NULL
+    }
 
     fold_scores <- held |>
         group_by(fold) |>
         summarise(
-            score = weighted_kappa(pred, truth, w, states, ordinal),
-            unweighted = weighted_kappa(pred, truth, rep(1, n()), states, ordinal)
+            score = weighted_kappa(pred, truth, w, states, positions),
+            unweighted = weighted_kappa(pred, truth, rep(1, n()), states, positions)
         )
     attr_row <- summarise_scores(fold_scores, tibble(
         method = "phytools-ltp", rank = rank, physiology = group,
