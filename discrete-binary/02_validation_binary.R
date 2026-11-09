@@ -27,6 +27,7 @@ if (!length(fnames)) {
     quit(save = "no")
 }
 
+source('../validation_calls.R')
 l <- map(fnames, read.csv)
 names(l) <- sub("^(.*/)*(.*)\\.csv$", "\\2", fnames)
 regex <- paste0('^', phys_name, "_(all|genus|species|strain)(.*)$")
@@ -42,7 +43,7 @@ for (i in seq_along(l)) {
             ## mattter because it will be sliced a few lines below
             mutate(
                 Attribute = case_when(
-                    grepl("TRUE$", Attribute) & Score > 0.8 ~ Attribute,
+                    grepl("TRUE$", Attribute) & callPredicted(Score) ~ Attribute,
                     TRUE ~ sub("TRUE$", "FALSE", Attribute)
                 )
             )  
@@ -51,13 +52,7 @@ for (i in seq_along(l)) {
     }
 }
 
-predicted_folds <- l[grep('predicted', names(l))] |> 
-    map( ~ {
-        .x |> 
-            group_by(NCBI_ID) |> 
-            slice_max(order_by = Score, n = 1, with_ties = FALSE) |> 
-            ungroup()
-    })
+predicted_folds <- map(l[grep('predicted', names(l))], pickBinaryCall)
 
 myFun <- function(x, y) {
     x <- x |> 
