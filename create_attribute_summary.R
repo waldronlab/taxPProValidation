@@ -89,6 +89,12 @@ summarise_scores <- function(folds, base) {
     )
 }
 
+## Fold files differ in which columns are all NA, so read everything as
+## character and convert Score.
+read_chr <- function(f) {
+    mutate(read.csv(f, colClasses = "character"), Score = as.numeric(Score))
+}
+
 ## Discrete ####
 discrete_one <- function(dir, phys, rank) {
     stem <- file.path(run_dir, dir, paste0(phys, "_", rank, "_phytools-ltp"))
@@ -97,7 +103,7 @@ discrete_one <- function(dir, phys, rank) {
     pred_files <- paste0(stem, "_predicted_Fold", folds, ".csv")
     if (!all(file.exists(c(test_files, pred_files)))) return(NULL)
 
-    test <- map2_dfr(test_files, folds, ~ mutate(read.csv(.x), fold = .y))
+    test <- map2_dfr(test_files, folds, ~ mutate(read_chr(.x), fold = .y))
     ## curated state: highest Score; ties go to the first state in name order
     truth <- test |>
         arrange(NCBI_ID, desc(Score), Attribute) |>
@@ -107,7 +113,7 @@ discrete_one <- function(dir, phys, rank) {
         select(tip_label, NCBI_ID) |>
         inner_join(truth, by = "NCBI_ID")
     preds <- map2_dfr(pred_files, folds, ~ {
-        read.csv(.x) |>
+        read_chr(.x) |>
             filter(tip_label %in% tips$tip_label[tips$fold == .y]) |>
             arrange(tip_label, desc(Score), Attribute) |>
             distinct(tip_label, .keep_all = TRUE) |>
