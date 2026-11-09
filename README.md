@@ -15,6 +15,18 @@ will be reported in papers, etc. Everytime this file is updated, it most be copi
 `waldronlab/bugphyzz` package uses this file to attach validation
 results to the bugphyzz annotations.
 
+Text files: `validation_attributes.tsv` and `validation_states.tsv`, from
+`create_attribute_summary.R`. The first has one row per rank and physiology
+with the score that decides whether an attribute is imputed
+(waldronlab/bugphyzzExports ADR 0006): Cohen's kappa for discrete attributes,
+linearly weighted when bugphyzz `attributes.tsv` gives the states an
+`ordinal_position`, and R2 for numeric attributes, with held-out tips weighted
+so that their distance to the nearest annotated tip (NSTI) matches that of
+the tips to be imputed. `score_lcb` is the lower bound of a two-sided 95%
+t-interval over folds. The second has the precision of each predicted state
+of discrete attributes, with the same weights. Both are copied to
+`waldronlab/bugphyzz/inst/extdata/`.
+
 Script: `create_summary_table.R`. This script is used to generate
 the `validation_summmary.tsv` file. It must be run after all of the code
 in the README files of the three directories mentioned below has been run.
@@ -44,6 +56,16 @@ Rscript --vanilla create_summary_table.R # R in PATH
 /usr/bin/Rscript --vanilla create_summary_table.R # on supermicro
 ```
 
+### 3. Attribute-level scores
+
+```bash
+Rscript create_attribute_summary.R  # optional: run directory, attributes.tsv
+```
+
+It reads the discrete fold files and the numeric `*_predictions.csv` files
+that `01_numeric_val.R` writes, and needs bugphyzz's `attributes.tsv` with the
+`ordinal_position` column (bugphyzz 1.7.15 or later, or a path to the file).
+
 ## Versioning
 
 The version should be updated when generating a new `validation_summary.tsv` file.
@@ -55,6 +77,17 @@ Latest Version: v1.0.7
 Use these logs in addition to the commits. The version is important here because it is referenced in `waldonlab/bugphyzz/inst/scripts/README.md`.
 
 ### Logs
+
+#### Attribute-level scores (validation_attributes.tsv, validation_states.tsv)
+First attribute-level tables (issue #12, bugphyzzExports ADR 0006). The
+discrete scores come from the v1.0.7 fold files (run of 2026-11-08); the
+numeric part was re-run on 2026-11-09 with the same packages (bugphyzz
+1.7.11, taxPPro 1.0.1, private library) to write its fold predictions, with
+`physiologies()` reading that day's sheets and sources. At rank `all`, kappa
+lower bounds: gram stain 0.929, spore formation 0.856, aerophilicity 0.786
+(weighted), motility 0.586, COGEM pathogenicity rating 0.552, shape 0.548,
+biosafety level 0.475; R2: G+C content 0.942, coding genes 0.882, genome size
+0.882, growth temperature 0.739, length 0.220, optimal pH 0.195, width 0.021.
 
 #### v1.0.7
 The validation now calls a predicted state positive at the score the export
