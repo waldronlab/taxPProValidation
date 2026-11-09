@@ -48,13 +48,26 @@ Rscript --vanilla create_summary_table.R # R in PATH
 
 The version should be updated when generating a new `validation_summary.tsv` file.
 
-Latest Version: v1.0.6
+Latest Version: v1.0.7
 
 ### Version log
 
 Use these logs in addition to the commits. The version is important here because it is referenced in `waldonlab/bugphyzz/inst/scripts/README.md`.
 
 ### Logs
+
+#### v1.0.7
+The validation now calls a predicted state positive at the score the export
+ships, 0.5 or more (ADR 0002), instead of above 0.8. The export keeps every
+imputed state with a score of 0.5 or more (`taxPPro::scores2Freq()`:
+"sometimes" and up), so the MCC in `validation_summary.tsv` now describes the
+data users receive. The held-out truth is still the curated state with a
+score above 0.8. Same predictions as v1.0.6; only the 02 and 03 steps were
+re-run (`run_v110_step4.sh` without the prediction step). Rank `all`: 36 of
+41 discrete classes gain, median 0.03; anaerobic 0.85 to 0.90, aerobic 0.65 to
+0.68, motility 0.52 to 0.61, extreme environment 0.45 to 0.57; antimicrobial
+sensitivity 0.51 to 0.45. No class changes side of 0.7 at rank `all`; shape
+"filamentous" passes at genus (0.69 to 0.79). Numeric results are unchanged.
 
 #### v1.0.6
 The prediction scripts drop the rows the bugphyzzExports export drops before

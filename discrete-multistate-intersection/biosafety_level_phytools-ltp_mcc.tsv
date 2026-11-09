@@ -1,8 +1,8 @@
 physiology	rank	method	attribute	mean	sd
-biosafety level	all	phytools-ltp	biosafety level 1	0.56116226121747	0.0495614288922577
-biosafety level	all	phytools-ltp	biosafety level 2	0.492078725367144	0.0505582690964548
-biosafety level	all	phytools-ltp	biosafety level 3	0.299672115102436	0.483272595002819
-biosafety level	species	phytools-ltp	biosafety level 1	0.54354537435723	0.0596726661459097
-biosafety level	species	phytools-ltp	biosafety level 2	0.484212311817614	0.0761674823685641
-biosafety level	strain	phytools-ltp	biosafety level 1	0.501968692412553	0.0942897286442007
-biosafety level	strain	phytools-ltp	biosafety level 2	0.469832576983236	0.108267220575706
+biosafety level	all	phytools-ltp	biosafety level 1	0.542020996990208	0.047814318391672
+biosafety level	all	phytools-ltp	biosafety level 2	0.522632891136391	0.0478388006002481
+biosafety level	all	phytools-ltp	biosafety level 3	0.270349399746681	0.443301408933391
+biosafety level	species	phytools-ltp	biosafety level 1	0.531453841357752	0.0525865526860593
+biosafety level	species	phytools-ltp	biosafety level 2	0.532719034540449	0.0578284755292081
+biosafety level	strain	phytools-ltp	biosafety level 1	0.547655637218137	0.109650686895505
+biosafety level	strain	phytools-ltp	biosafety level 2	0.547655637218137	0.109650686895505

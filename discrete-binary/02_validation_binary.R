@@ -42,7 +42,7 @@ for (i in seq_along(l)) {
             ## mattter because it will be sliced a few lines below
             mutate(
                 Attribute = case_when(
-                    grepl("TRUE$", Attribute) & Score > 0.8 ~ Attribute,
+                    grepl("TRUE$", Attribute) & Score >= 0.5 ~ Attribute,
                     TRUE ~ sub("TRUE$", "FALSE", Attribute)
                 )
             )  

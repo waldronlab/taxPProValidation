@@ -1,3 +1,3 @@
 physiology	rank	method	attribute	mean	sd
-antimicrobial sensitivity	all	phytools-ltp	antimicrobial sensitivity	0.512092104527793	0.143983475131624
-antimicrobial sensitivity	species	phytools-ltp	antimicrobial sensitivity	0.49029447589825	0.171577353196859
+antimicrobial sensitivity	all	phytools-ltp	antimicrobial sensitivity	0.448233111343595	0.233711634783565
+antimicrobial sensitivity	species	phytools-ltp	antimicrobial sensitivity	0.418669566500403	0.224687435511171
