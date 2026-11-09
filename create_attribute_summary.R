@@ -218,10 +218,9 @@ numeric_phys <- unique(sub(
     "_(all|genus|species|strain)_castor-ltp_predictions\\.csv$", "",
     list.files(file.path(run_dir, "numeric"), pattern = "_predictions\\.csv$")
 ))
-numeric <- compact(unlist(
-    map(numeric_phys, function(p) map(ranks, ~ numeric_one(p, .x))),
-    recursive = FALSE
-))
+numeric <- bind_rows(map(numeric_phys, function(p) {
+    bind_rows(map(ranks, ~ numeric_one(p, .x)))
+}))
 
 attributes_out <- bind_rows(map(discrete, "attr"), numeric) |>
     arrange(physiology, rank) |>
