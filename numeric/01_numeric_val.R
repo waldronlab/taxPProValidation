@@ -200,6 +200,17 @@ for (i in seq_along(trainSets)) {
     hsp[[i]] <- states[names(testSets[[i]])]
 }
 
+## Per-fold predictions for the attribute-level summary
+## (create_attribute_summary.R; bugphyzzExports ADR 0006). Not tracked.
+fold_predictions <- imap(hsp, ~ data.frame(
+    tip_label = names(.x), fold = as.integer(sub('Fold', '', .y)),
+    actual = unname(testSets[[.y]][names(.x)]), predicted = unname(.x)
+)) |>
+    bind_rows()
+write.csv(
+    fold_predictions, paste0(logfile, '_predictions.csv'), row.names = FALSE
+)
+
 ## Calculate metrics
 metrics <- map2(hsp, testSets, ~ {
     predicted_values <- .x
