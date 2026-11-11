@@ -123,7 +123,7 @@ fdat <- filter(fdat, !NCBI_ID %in% remove_ids)
 if (nrow(fdat) < 10) {
     msg <- paste0(
         'Not enough data for propagation of: ', phys_name, '; rank: ', rank_arg,
-        'Quitting. Number of attributes: ', length(keep_this)
+        '. Fewer than 10 taxa. Quitting.'
     )
     log_print(msg)
     quit(save = 'no')

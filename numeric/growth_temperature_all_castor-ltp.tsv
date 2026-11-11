@@ -1,2 +1,2 @@
 physiology	r_squared_mean	r_squared_sd	rank	ltp_bp_phys	bp_phys	ltp	nsti_mean	nsti_sd	method
-growth temperature	0.746263155026579	0.0268392691621103	all	15546	23282	23031	0.03	0.036	castor-ltp
+growth temperature	0.746022047247713	0.0247988980002766	all	15575	23312	23031	0.03	0.036	castor-ltp

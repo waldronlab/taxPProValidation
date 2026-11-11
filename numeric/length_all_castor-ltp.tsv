@@ -1,2 +1,2 @@
 physiology	r_squared_mean	r_squared_sd	rank	ltp_bp_phys	bp_phys	ltp	nsti_mean	nsti_sd	method
-length	0.332968798720101	0.179584135023748	all	5896	6623	23031	0.056	0.051	castor-ltp
+length	0.259282937858031	0.244659291529071	all	5966	6735	23031	0.055	0.049	castor-ltp

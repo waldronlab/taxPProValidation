@@ -70,7 +70,7 @@ that `01_numeric_val.R` writes, and needs bugphyzz's `attributes.tsv` with the
 
 The version should be updated when generating a new `validation_summary.tsv` file.
 
-Latest Version: v1.0.7
+Latest Version: v1.0.8
 
 ### Version log
 
@@ -88,6 +88,34 @@ lower bounds: gram stain 0.929, spore formation 0.856, aerophilicity 0.786
 (weighted), motility 0.586, COGEM pathogenicity rating 0.552, shape 0.548,
 biosafety level 0.475; R2: G+C content 0.942, coding genes 0.882, genome size
 0.882, growth temperature 0.739, length 0.220, optimal pH 0.195, width 0.021.
+
+#### v1.0.8
+Re-run with the Wikipedia_2026 source (waldronlab/bugphyzzExports#107) and
+three new multistate physiologies from it, `halophily class`, `temperature
+class` and `ph class` (waldronlab/bugphyzzExports#106). Run of 2026-11-11 on
+supermicro with bugphyzz 1.7.18, taxPPro 1.0.1 and bugphyzzExports ccf4ff2;
+all three steps and `create_attribute_summary.R` were run.
+
+The attributes that pass the export's thresholds (kappa 0.7, R2 0.5) are the
+same as before. Lower bounds at rank `all`, before and after: gram stain 0.929
+to 0.933, spore formation 0.856 to 0.865, aerophilicity 0.786 to 0.782,
+motility 0.586 to 0.598, shape 0.548 to 0.565, plant pathogenicity 0.362 to
+0.430, animal pathogen 0.426 to 0.350, arrangement 0.364 to 0.354, spore
+shape 0.193 to 0.172; R2 of growth temperature 0.739 to 0.742, length 0.220
+to 0.084, width 0.021 to -0.011. The mean R2 of width rises (0.08 to 0.21)
+with a wider spread over folds; the source adds the giant sulfur bacteria
+(*Thiomargarita namibiensis*, 100 to 750 um). Attributes with no Wikipedia
+rows are unchanged.
+
+New rows: temperature class 0.269 (542 held-out tips), halophily class 0.082
+(477), host-associated 0.139 (904; it had one value only before). `ph class`
+has values for fewer than 1% of the tips and is not predicted. `non-halophilic`
+has one taxon and is dropped.
+
+The prediction scripts no longer stop with an R error when an attribute has
+fewer than 10 taxa at a rank (the message used `keep_this` before it was
+defined); the run was made before that fix, with the one such exit checked by
+hand.
 
 #### v1.0.7
 The validation now calls a predicted state positive at the score the export
