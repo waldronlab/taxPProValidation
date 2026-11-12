@@ -1,5 +1,5 @@
 physiology	rank	method	attribute	mean	sd
-motility	all	phytools-ltp	motility	0.609690358585512	0.0222971683186454
-motility	genus	phytools-ltp	motility	0.380484623742305	0.050598209673678
-motility	species	phytools-ltp	motility	0.618291250394101	0.00764845121108101
+motility	all	phytools-ltp	motility	0.619142452842233	0.0209208329235924
+motility	genus	phytools-ltp	motility	0.360853112223496	0.0983400946463881
+motility	species	phytools-ltp	motility	0.616188575502181	0.030467964688106
 motility	strain	phytools-ltp	motility	0.556289207369821	0.0626226206585556

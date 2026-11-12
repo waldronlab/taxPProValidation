@@ -1,5 +1,5 @@
 physiology	rank	method	attribute	mean	sd
-spore formation	all	phytools-ltp	spore formation	0.886651122140687	0.0182500827748154
-spore formation	genus	phytools-ltp	spore formation	0.726996501765394	0.0758564278276017
-spore formation	species	phytools-ltp	spore formation	0.890744764303772	0.0217307025611272
+spore formation	all	phytools-ltp	spore formation	0.894936879457214	0.0205079119017802
+spore formation	genus	phytools-ltp	spore formation	0.746834070760939	0.0560486968888176
+spore formation	species	phytools-ltp	spore formation	0.899311274500975	0.0205990394889004
 spore formation	strain	phytools-ltp	spore formation	0.779628081912777	0.0657750291988217

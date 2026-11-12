@@ -1,0 +1,12 @@
+physiology	rank	method	attribute	mean	sd
+temperature class	all	phytools-ltp	hyperthermophile	0.486425750019606	0.442278860382589
+temperature class	all	phytools-ltp	mesophile	0.406173500826219	0.134169321573991
+temperature class	all	phytools-ltp	psychrophile	0.591997015625785	0.128595009539541
+temperature class	all	phytools-ltp	psychrotolerant	0.317619163202595	0.252509162641992
+temperature class	all	phytools-ltp	thermophile	0.620142528939495	0.177267065847119
+temperature class	all	phytools-ltp	thermotolerant	-0.00588679245283019	0.00948364277279986
+temperature class	species	phytools-ltp	mesophile	0.340042944997234	0.209176142817886
+temperature class	species	phytools-ltp	psychrophile	0.530907489421218	0.158244369173871
+temperature class	species	phytools-ltp	psychrotolerant	0.306180538244562	0.231623596997856
+temperature class	species	phytools-ltp	thermophile	0.631663354292575	0.140875201914524
+temperature class	species	phytools-ltp	thermotolerant	-0.00238095238095238	0.00752923252421043

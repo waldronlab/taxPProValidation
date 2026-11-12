@@ -9,6 +9,9 @@ physiologies=(
     'spore_shape'
     'arrangement'
     'hemolysis'
+    'halophily_class'
+    'temperature_class'
+    'ph_class'
 )
 
 myVar=$(which R)

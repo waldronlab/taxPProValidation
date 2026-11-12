@@ -1,0 +1,4 @@
+Attribute	ltp_bp	bp	ltp_bp_phys	bp_phys	ltp	nsti_mean	nsti_sd
+halophilic	328	391	408	486	23501	0.228	0.127
+halotolerant	87	101	408	486	23501	0.228	0.127
+non-halophilic	0	1	408	486	23501	0.228	0.127

@@ -1,0 +1,7 @@
+Attribute	ltp_bp	bp	ltp_bp_phys	bp_phys	ltp	nsti_mean	nsti_sd
+hyperthermophile	17	34	538	684	23501	0.158	0.095
+mesophile	139	173	538	684	23501	0.158	0.095
+psychrophile	105	116	538	684	23501	0.158	0.095
+psychrotolerant	59	71	538	684	23501	0.158	0.095
+thermophile	214	284	538	684	23501	0.158	0.095
+thermotolerant	15	17	538	684	23501	0.158	0.095

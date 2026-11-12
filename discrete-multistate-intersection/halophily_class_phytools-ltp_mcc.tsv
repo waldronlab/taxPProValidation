@@ -1,0 +1,5 @@
+physiology	rank	method	attribute	mean	sd
+halophily class	all	phytools-ltp	halophilic	0.479449921546818	0.0960508347951486
+halophily class	all	phytools-ltp	halotolerant	0.496802698000824	0.0800214616908996
+halophily class	species	phytools-ltp	halophilic	0.493254786806173	0.194731496862521
+halophily class	species	phytools-ltp	halotolerant	0.521408733612789	0.189685928519722
