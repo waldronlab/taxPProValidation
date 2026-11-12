@@ -107,7 +107,7 @@ fdat <- dat |>
 if (!nrow(fdat)) {
     msg <- paste0(
         'Not enough data for propagation of: ', phys_name, '; rank: ', rank_arg,
-        'Quitting.'
+        '. Quitting.'
     )
     log_print(msg)
     quit(save = 'no')
@@ -136,7 +136,7 @@ keep_this <- split(fdat, fdat$Attribute)
 if (length(keep_this) < 2) {
     msg <- paste0(
         'Not enough data for propagation of: ', phys_name, '; rank: ', rank_arg,
-        'Quitting. Number of attributes: ', length(keep_this)
+        '. Quitting. Number of attributes: ', length(keep_this)
     )
     log_print(msg)
     quit(save = 'no')

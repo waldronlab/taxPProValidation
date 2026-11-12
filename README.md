@@ -102,20 +102,30 @@ to 0.933, spore formation 0.856 to 0.865, aerophilicity 0.786 to 0.782,
 motility 0.586 to 0.598, shape 0.548 to 0.565, plant pathogenicity 0.362 to
 0.430, animal pathogen 0.426 to 0.350, arrangement 0.364 to 0.354, spore
 shape 0.193 to 0.172; R2 of growth temperature 0.739 to 0.742, length 0.220
-to 0.084, width 0.021 to -0.011. The mean R2 of width rises (0.08 to 0.21)
-with a wider spread over folds; the source adds the giant sulfur bacteria
-(*Thiomargarita namibiensis*, 100 to 750 um). Attributes with no Wikipedia
-rows are unchanged.
+to 0.084, width 0.021 to -0.011. All of these were below the thresholds
+before and stay below. For length and width the spread over folds grows (the
+mean R2 of width rises from 0.08 to 0.21 while its lower bound falls). The
+source adds 70 lengths and 64 widths to the tree. A possible cause of the
+loss of R2 is the giant sulfur bacteria among them (*Thiomargarita
+namibiensis*, 100 to 750 um, against a few um for most taxa): one such value
+in a held-out fold adds a large squared error. This was not checked by
+leaving those taxa out. Attributes with no Wikipedia rows are
+unchanged.
 
 New rows: temperature class 0.269 (542 held-out tips), halophily class 0.082
 (477), host-associated 0.139 (904; it had one value only before). `ph class`
 has values for fewer than 1% of the tips and is not predicted. `non-halophilic`
-has one taxon and is dropped.
+has one taxon and is dropped. The scores of the two classes rest on few
+held-out tips: the effective sample size of the distance weights is 22% of
+477 tips for halophily class (largest weight 7.7) and 64% of 542 for
+temperature class.
 
 The prediction scripts no longer stop with an R error when an attribute has
 fewer than 10 taxa at a rank (the message used `keep_this` before it was
-defined); the run was made before that fix, with the one such exit checked by
-hand.
+defined), and the "Quitting" messages have a separator. The run was made
+before that fix, with the one such exit (COGEM pathogenicity rating at rank
+strain) checked by hand; the fixed script was then run for that case and
+exits cleanly.
 
 #### v1.0.7
 The validation now calls a predicted state positive at the score the export
